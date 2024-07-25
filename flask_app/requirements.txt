@@ -1,0 +1,7 @@
+pymysql
+mysql-connector-python
+Flask==3.0.0
+Werkzeug==3.0.1
+Flask-WTF==1.2.1
+WTForms==3.1.1
+reportlab==4.0.6

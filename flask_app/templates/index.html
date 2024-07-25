@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departure Search</title>
+
+    <!-- Include the CSS directly -->
+    <style>
+        /* Paste the content of styles.css here */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Optional: Add animation to form elements */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        form {
+            animation: fadeInUp 0.5s ease;
+        }
+    </style>
+    <!-- End of included CSS -->
+</head>
+<body>
+    <h1>Search for Departures</h1>
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        {{ form.stationfrom.label }} {{ form.stationfrom(size=20) }}
+        {{ form.stationend.label }} {{ form.stationend(size=20) }}<br><br>
+        {{ form.date.label }} {{ form.date(size=20) }}
+        {{ form.choice.label }} {{ form.choice }}<br><br>
+        {{ form.hourinf.label }} {{ form.hourinf(size=20) }}
+        {{ form.hoursup.label }} {{ form.hoursup(size=20) }}<br><br>
+        {{ form.hour.label }} {{ form.hour(size=20) }}<br><br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
