@@ -1,0 +1,5 @@
+# Ignore tous les fichiers socket
+*.sock
+
+# Ignorer le répertoire de données MySQL
+mysql_data/
